@@ -143,6 +143,13 @@ paymentItems.forEach(item => {
   });
 });
 
+// При відкритті модального вікна
+document.body.classList.add('modal-open');
+
+// При закритті модального вікна
+document.body.classList.remove('modal-open');
+
+
 
 //Credit card scripts
 const creditNumberInput = document.querySelector('.creditNumber');
@@ -237,6 +244,22 @@ function accordion() {
 }
 accordion() 
 // Accordion end
+
+
+var countdown = document.getElementById('countdown');
+var navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', function() {
+  var offset = countdown.offsetTop;
+
+  if (window.pageYOffset >= offset) {
+    countdown.classList.add('fixed');
+    navbar.style.display = 'none'; // Hide the navbar
+  } else {
+    countdown.classList.remove('fixed');
+    navbar.style.display = 'flex'; // Show the navbar
+  }
+});
 
 
 
